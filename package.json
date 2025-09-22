@@ -1,0 +1,43 @@
+{
+  "name": "gerador-de-presentes-aleatorio",
+  "version": "1.0.0",
+  "description": "Chrome Extension that generates intelligent gift suggestions by creating targeted Amazon searches",
+  "main": "dist/popup/popup.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development --watch",
+    "clean": "rm -rf dist",
+    "package": "npm run clean && npm run build && cd dist && zip -r ../gerador-de-presentes-aleatorio.zip ."
+  },
+  "keywords": [
+    "chrome-extension",
+    "gifts",
+    "amazon",
+    "shopping",
+    "presentes",
+    "typescript",
+    "gift-generator",
+    "shopping-assistant"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.254",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "style-loader": "^3.3.3",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/gerador-de-presentes-aleatorio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/gerador-de-presentes-aleatorio/issues"
+  },
+  "homepage": "https://github.com/yourusername/gerador-de-presentes-aleatorio#readme"
+}

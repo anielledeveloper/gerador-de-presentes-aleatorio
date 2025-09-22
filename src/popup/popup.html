@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Presentes Aleatório</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header -->
+        <div class="popup-header">
+            <h1 class="popup-title">🎁 Gerador de Presentes</h1>
+            <p class="popup-subtitle">Encontre o presente perfeito!</p>
+        </div>
+
+        <!-- Main Form -->
+        <form id="gift-form" class="gift-form">
+            <!-- Recipient Field -->
+            <div class="form-group">
+                <label for="recipient-select" class="form-label">
+                    <span class="label-icon">👤</span>
+                    Para quem?
+                </label>
+                <select id="recipient-select" name="recipient" class="form-select" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="amigo">Amigo(a)</option>
+                    <option value="pai">Pai</option>
+                    <option value="mae">Mãe</option>
+                    <option value="namorado">Namorado(a)</option>
+                    <option value="irmao">Irmão/Irmã</option>
+                    <option value="colega">Colega de Trabalho</option>
+                </select>
+            </div>
+
+            <!-- Interests Field -->
+            <div class="form-group">
+                <label for="interests-input" class="form-label">
+                    <span class="label-icon">💭</span>
+                    Interesses
+                </label>
+                <input 
+                    type="text" 
+                    id="interests-input" 
+                    name="interests"
+                    class="form-input" 
+                    placeholder="tecnologia, livros, desporto, música..."
+                    required
+                >
+                <small class="form-hint">Digite os interesses ou hobbies da pessoa</small>
+            </div>
+
+            <!-- Budget Field -->
+            <div class="form-group">
+                <label for="budget-select" class="form-label">
+                    <span class="label-icon">💰</span>
+                    Orçamento
+                </label>
+                <select id="budget-select" name="budget" class="form-select" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="qualquer">Qualquer Valor</option>
+                    <option value="ate50">Até R$50</option>
+                    <option value="50a100">R$50 a R$100</option>
+                    <option value="100a200">R$100 a R$200</option>
+                    <option value="acima200">Acima de R$200</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="generate-btn" class="generate-btn">
+                <span class="btn-icon">🎁</span>
+                <span class="btn-text">Gerar Ideias de Presentes</span>
+                <span class="btn-loading" style="display: none;">⏳</span>
+            </button>
+        </form>
+
+        <!-- Tips Section -->
+        <div class="tips-section">
+            <h3 class="tips-title">💡 Dicas para melhores resultados:</h3>
+            <ul class="tips-list">
+                <li>Seja específico nos interesses (ex: "livros de ficção científica")</li>
+                <li>Mencione hobbies ou atividades favoritas</li>
+                <li>Inclua marcas ou estilos preferidos</li>
+            </ul>
+        </div>
+
+        <!-- Recent Searches -->
+        <div id="recent-searches" class="recent-searches" style="display: none;">
+            <h3 class="recent-title">🔍 Buscas Recentes</h3>
+            <div id="recent-list" class="recent-list">
+                <!-- Recent searches will be populated here -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <p class="footer-text">
+                Powered by <strong>Amazon.com.br</strong>
+            </p>
+            <p class="footer-disclaimer">
+                Os resultados são gerados automaticamente e podem variar
+            </p>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="success-toast" class="success-toast">
+        <div class="toast-content">
+            <span class="toast-icon">✅</span>
+            <span class="toast-message">Buscando presentes na Amazon...</span>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="error-toast">
+        <div class="toast-content">
+            <span class="toast-icon">❌</span>
+            <span class="toast-message">Erro ao gerar busca</span>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

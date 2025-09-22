@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Presentes Aleatório</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="newtab-body">
+    <div class="newtab-container">
+        <!-- Header -->
+        <div class="newtab-header">
+            <h1 class="newtab-title">🎁 Gerador de Presentes Aleatório</h1>
+            <p class="newtab-subtitle">Encontre o presente perfeito para quem você ama!</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="newtab-content">
+            <!-- Gift Form -->
+            <div class="gift-form-container">
+                <form id="gift-form" class="gift-form">
+                    <!-- Recipient Field -->
+                    <div class="form-group">
+                        <label for="recipient-select" class="form-label">
+                            <span class="label-icon">👤</span>
+                            Para quem?
+                        </label>
+                        <select id="recipient-select" name="recipient" class="form-select" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="amigo">Amigo(a)</option>
+                            <option value="pai">Pai</option>
+                            <option value="mae">Mãe</option>
+                            <option value="namorado">Namorado(a)</option>
+                            <option value="irmao">Irmão/Irmã</option>
+                            <option value="colega">Colega de Trabalho</option>
+                        </select>
+                    </div>
+
+                    <!-- Age Group Field -->
+                    <div class="form-group">
+                        <label for="age-select" class="form-label">
+                            <span class="label-icon">🎂</span>
+                            Faixa Etária
+                        </label>
+                        <select id="age-select" name="age" class="form-select" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="child">Criança (até 12 anos)</option>
+                            <option value="teen">Adolescente (13-17 anos)</option>
+                            <option value="adult">Adulto (18-64 anos)</option>
+                            <option value="senior">Idoso (65+ anos)</option>
+                        </select>
+                    </div>
+
+                    <!-- Gender Field -->
+                    <div class="form-group">
+                        <label for="gender-select" class="form-label">
+                            <span class="label-icon">⚧</span>
+                            Gênero
+                        </label>
+                        <select id="gender-select" name="gender" class="form-select" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="male">Masculino</option>
+                            <option value="female">Feminino</option>
+                            <option value="unisex">Indiferente</option>
+                        </select>
+                    </div>
+
+                    <!-- Interests Field -->
+                    <div class="form-group">
+                        <label for="interests-input" class="form-label">
+                            <span class="label-icon">💭</span>
+                            Interesses e Hobbies
+                        </label>
+                        <input 
+                            type="text" 
+                            id="interests-input" 
+                            name="interests"
+                            class="form-input" 
+                            placeholder="tecnologia, música, leitura, culinária, fitness..."
+                            required
+                        >
+                        <small class="form-hint">Digite os principais interesses ou hobbies da pessoa</small>
+                    </div>
+
+                    <!-- Occasion Field -->
+                    <div class="form-group">
+                        <label for="occasion-select" class="form-label">
+                            <span class="label-icon">🎉</span>
+                            Ocasião
+                        </label>
+                        <select id="occasion-select" name="occasion" class="form-select" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="aniversario">Aniversário</option>
+                            <option value="natal">Natal</option>
+                            <option value="dia_das_maes">Dia das Mães</option>
+                            <option value="dia_dos_pais">Dia dos Pais</option>
+                            <option value="formatura">Formatura</option>
+                            <option value="promocao">Promoção</option>
+                            <option value="casa_nova">Casa Nova</option>
+                            <option value="casamento">Casamento</option>
+                            <option value="viagem">Viagem</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <!-- Budget Field -->
+                    <div class="form-group">
+                        <label for="budget-select" class="form-label">
+                            <span class="label-icon">💰</span>
+                            Orçamento
+                        </label>
+                        <select id="budget-select" name="budget" class="form-select" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="low">Até R$50</option>
+                            <option value="medium">R$50 a R$200</option>
+                            <option value="high">R$200 a R$500</option>
+                            <option value="premium">Acima de R$500</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="generate-btn" class="generate-btn">
+                        <span class="btn-icon">🎁</span>
+                        <span class="btn-text">Encontrar Presentes Perfeitos</span>
+                        <span class="btn-loading" style="display: none;">⏳</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tips Section -->
+            <div class="tips-section">
+                <h3 class="tips-title">💡 Dicas para melhores resultados:</h3>
+                <ul class="tips-list">
+                    <li>Seja específico nos interesses (ex: "livros de ficção científica")</li>
+                    <li>Mencione hobbies ou atividades favoritas</li>
+                    <li>Inclua marcas ou estilos preferidos</li>
+                </ul>
+            </div>
+
+            <!-- Gift Results -->
+            <div id="gift-results" class="gift-results" style="display: none;">
+                <h3 class="results-title">🎁 Sugestões de Presentes</h3>
+                <div id="gift-list" class="gift-list">
+                    <!-- Gift suggestions will be populated here -->
+                </div>
+            </div>
+
+            <!-- Recent Searches -->
+            <div id="recent-searches" class="recent-searches" style="display: none;">
+                <h3 class="recent-title">🔍 Buscas Recentes</h3>
+                <div id="recent-list" class="recent-list">
+                    <!-- Recent searches will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="newtab-footer">
+            <p class="footer-text">
+                Gerador de Presentes Aleatório
+            </p>
+            <p class="footer-disclaimer">
+                Encontre o presente perfeito para quem você ama
+            </p>
+        </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="success-toast" class="success-toast">
+        <div class="toast-content">
+            <span class="toast-icon">✅</span>
+            <span class="toast-message">Buscando presentes online...</span>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="error-toast">
+        <div class="toast-content">
+            <span class="toast-icon">❌</span>
+            <span class="toast-message">Erro ao gerar busca</span>
+        </div>
+    </div>
+
+    <script src="newtab/newtab.js"></script>
+</body>
+</html>

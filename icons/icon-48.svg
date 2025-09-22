@@ -1,0 +1,34 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="giftGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E53E3E;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E5BBA;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main gift box -->
+  <rect x="8" y="12" width="32" height="24" rx="3" fill="url(#giftGradient)" stroke="#C53030" stroke-width="1"/>
+  
+  <!-- Gift box interior -->
+  <rect x="10" y="14" width="28" height="20" rx="2" fill="white"/>
+  
+  <!-- Bow -->
+  <rect x="18" y="6" width="12" height="6" rx="3" fill="url(#bowGradient)"/>
+  <rect x="20" y="4" width="8" height="2" rx="1" fill="#1E3A8A"/>
+  
+  <!-- Bow ribbon -->
+  <rect x="22" y="8" width="4" height="4" rx="2" fill="url(#bowGradient)"/>
+  
+  <!-- Gift decoration -->
+  <circle cx="24" cy="24" r="3" fill="#FFD700"/>
+  <path d="M21 21l6 6 6-6" stroke="#FF6B6B" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Sparkles -->
+  <circle cx="16" cy="20" r="1" fill="#FFD700"/>
+  <circle cx="32" cy="28" r="1" fill="#FFD700"/>
+  <circle cx="20" cy="32" r="1" fill="#FFD700"/>
+</svg>
