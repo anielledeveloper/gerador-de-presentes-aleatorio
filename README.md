@@ -2,6 +2,9 @@
 
 Uma extensão inteligente do Chrome que encontra o presente perfeito para quem você ama! Com base em critérios detalhados como destinatário, faixa etária, gênero, interesses, ocasião e orçamento, a extensão usa um algoritmo inteligente para sugerir os melhores presentes de um banco de dados interno com mais de 50 opções cuidadosamente selecionadas.
 
+![Screen](1.png)
+![Screen](2.png)
+
 ## 🎯 Funcionalidades
 
 ### 🧠 Algoritmo Inteligente de Recomendação
